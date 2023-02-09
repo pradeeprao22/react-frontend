@@ -4,6 +4,11 @@ import './App.css';
 import List from "./components/List"
 import AddToList from "./components/AddToList"
 
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 export interface IState {
   people: {
     name: string

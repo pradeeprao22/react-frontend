@@ -6,6 +6,7 @@ const List: React.FC<IProps> = ({ people }) => {
 
   const renderList = (): JSX.Element[] => {
     return people.map((person) => (
+      <div className='container'>
         <li>
           <div>
             <h2> { person.name } </h2>
@@ -13,6 +14,7 @@ const List: React.FC<IProps> = ({ people }) => {
           <p>{ person.age } years old</p>
           <p> { person.note }</p>
         </li>
+      </div>
     ))
   }
   return (     
