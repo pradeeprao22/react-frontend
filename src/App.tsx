@@ -36,9 +36,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>People Invited</h1>
+
+
+
+      {/* <h1>People Invited</h1>
       <List people= {people} />
-      <AddToList people= {people} setPeople= {setPeople}/>
+      <AddToList people= {people} setPeople= {setPeople}/> */}
     </div>
   );
 }
