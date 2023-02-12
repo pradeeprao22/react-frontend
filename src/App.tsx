@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import List from "./components/List"
 import AddToList from "./components/AddToList"
+import AppRouter from "./Router/AppRouter"
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -36,9 +37,7 @@ function App() {
 
   return (
     <div className="App">
-
-
-
+      <AppRouter />
       {/* <h1>People Invited</h1>
       <List people= {people} />
       <AddToList people= {people} setPeople= {setPeople}/> */}
