@@ -9,6 +9,7 @@ import {
 import Login from "../components/Login/Login"
 import Register from "../components/Login/Register"
 import Dashboard from "../pages/Dashboard"
+import Post from "../components/Posts/Post"
 
 // import { Switch } from "react-router";
 
@@ -35,6 +36,9 @@ export default function AppRouter() {
           <li>
             <Link to="/dashboard">Dashboard</Link>
           </li>
+          <li>
+            <Link to="/post">Posts</Link>
+          </li>
         </ul>
         <hr />
         {/*
@@ -49,6 +53,7 @@ export default function AppRouter() {
           <Route exact path="/" element={<Login/>} />          
           <Route path="/register" element={<Register/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/post" element={<Post/>} />
         </Routes>
       </div>
       </Router>

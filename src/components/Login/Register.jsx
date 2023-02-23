@@ -9,9 +9,9 @@ export default function Register() {
         confirmPassword: "",
     });
 
-    const handelClickPassword = () => {
-        setShowPassword((prevState) => !prevState)
-    };
+    // const handelClickPassword = () => {
+    //     setShowPassword((prevState) => !prevState)
+    // };
 
     const handelChange = (e) => {
         const { name, value } = e.target;

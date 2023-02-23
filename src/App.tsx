@@ -20,20 +20,20 @@ export interface IState {
 }
 
 function App() {
-  const [people, setPeople] = useState<IState["people"]>([
-    {
-      name: "Pradeep Rao",
-      age: 30,
-      url: "https://example.com",
-      note: "some notes"
-    },
-    {
-      name: "Pradeep Rao",
-      age: 30,
-      url: "https://example.com",
-      note: "some notes"
-    }
-  ])
+  // const [people, setPeople] = useState<IState["people"]>([
+  //   {
+  //     name: "Pradeep Rao",
+  //     age: 30,
+  //     url: "https://example.com",
+  //     note: "some notes"
+  //   },
+  //   {
+  //     name: "Pradeep Rao",
+  //     age: 30,
+  //     url: "https://example.com",
+  //     note: "some notes"
+  //   }
+  // ])
 
   return (
     <div className="App">
