@@ -33,12 +33,10 @@ export default function Post() {
     return (
         <div>
           {posts.map((post) => (
-
             <div>{post.id}</div>,
             <div>{post.frontend}</div>
-
           ))}
-          </div>
+        </div>
     );
 }
 
