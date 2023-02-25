@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import List from "./components/List"
@@ -9,6 +9,8 @@ import AppRouter from "./Router/AppRouter"
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { useStateValue } from './context/CurrentUsersContext';
+import { useNavigate } from "react-router-dom"
 
 export interface IState {
   people: {
@@ -20,6 +22,20 @@ export interface IState {
 }
 
 function App() {
+  const { push } = useNavigate()
+  const [, dispatch] = useStateValue()
+
+  // useMemo( 
+
+  //   async () => {
+  //     const userData = await  
+
+
+
+
+
+  //   }
+  //  );
   // const [people, setPeople] = useState<IState["people"]>([
   //   {
   //     name: "Pradeep Rao",
