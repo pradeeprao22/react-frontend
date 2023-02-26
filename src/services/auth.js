@@ -28,7 +28,7 @@ export const verifyUser = async () => {
         try {
             // verify method rails-api
             const resp = await api.get("auth/verify");
-            const resp.data;
+            return resp.data;
         } catch(error) {
             // return error
             let path = window.location.origin + "/login";
@@ -37,6 +37,10 @@ export const verifyUser = async () => {
             }
         }
     }
-
+    return null;
 };
+
+export const removeToken = () => {
+    api.defaults.headers.common.authorization = null;
+} 
 
