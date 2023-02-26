@@ -1,9 +1,8 @@
 import React, { createContext, useMemo, useRef } from "react";
-import usersReducer from "../reducers/allUsersReducer";
-
+import { usersReducer } from "../reducers/allUsersReducer";
+import useAsyncReducer from "../hooks/useAsyncReducer"
 export const AllUsersStateContext = createContext();
 export const AllUsersDispatchContext = createContext();
-
 
 export default function AllUsersProvider({ childern }){
    
