@@ -8,7 +8,9 @@ function reducer(state, action) {
             currentUser: action.currentUser,
           };
         case "EDIT_USER":
-          return { currentUser: action.currentUser };
+          return { 
+            currentUser: action.currentUser 
+          };
         case "REMOVE_USER":
           return { currentUser: null };
         default:
