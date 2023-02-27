@@ -4,13 +4,14 @@ import './App.css';
 import List from "./components/List"
 import AddToList from "./components/AddToList"
 import AppRouter from "./Router/AppRouter"
+import { verifyUser } from "./services/auth"
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { useStateValue } from './context/CurrentUsersContext';
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 
 export interface IState {
   people: {
@@ -22,20 +23,25 @@ export interface IState {
 }
 
 function App() {
-  const { push } = useNavigate()
-  const [, dispatch] = useStateValue()
+  const [, dispatch] = useStateValue();
+  const navigate  = useNavigate();
+  const { pathname } = useLocation();
 
-  // useMemo( 
+  useMemo( 
+    async () => {
+      const userData = await verifyUser()
+      dispatch({ type: "SET_USER", currentUser: userData });
 
-  //   async () => {
-  //     const userData = await  
+      if (
+        !userData &&
+        !pathname.match(/^\/login$/i) &&
+        !pathname.match(/^\/register$/i )
+      ) {
+        navigate("/login");
+      }
+    }
+   , [ dispatch, navigate, pathname ]);
 
-
-
-
-
-  //   }
-  //  );
   // const [people, setPeople] = useState<IState["people"]>([
   //   {
   //     name: "Pradeep Rao",
