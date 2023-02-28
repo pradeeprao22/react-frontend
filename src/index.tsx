@@ -2,14 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { Nest } from './components/Healpers/Nest';
+import { appProviders } from "./utils/appProviders"
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Nest element={appProviders}>
+      <App />
+    </Nest>
+    </Router>
   </React.StrictMode>
 );
 
