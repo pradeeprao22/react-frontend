@@ -24,7 +24,6 @@ import Post from "../components/Posts/Post"
 
 export default function AppRouter() {
   return (
-    <Router>
       <div>
         <ul>
           <li>
@@ -56,6 +55,5 @@ export default function AppRouter() {
           <Route path="/post" element={<Post/>} />
         </Routes>
       </div>
-      </Router>
   );
 }
