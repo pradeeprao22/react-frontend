@@ -21,6 +21,12 @@ export const usersReducer = (state, action) => {
                     return state;
                 }
                 return state;
+                
+            default:
+                return state;    
         }
+  
+
+
     });
 };
