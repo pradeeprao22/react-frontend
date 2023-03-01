@@ -1,4 +1,4 @@
-import { useStateValue } from "../../context/CurrentUsersContext";
+import { useStateValue } from "../../context/CurrentUserContext";
 import { useState, useContext } from "react";
 import { registerUser } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
