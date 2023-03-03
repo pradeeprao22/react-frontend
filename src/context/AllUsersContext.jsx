@@ -16,6 +16,14 @@ export default function AllUsersProvider({ childern }){
         initialUserState
     );
 
+    const dispatch = useRef(dispatchAllUsers);
+
+    useMemo(async () => {
+        dispatch.current({
+            type: "INIT",
+        });
+    }, []);
+
     return (
         <AllUsersStateContext.Provider value={state}>
             <AllUsersDispatchContext value={dispatchAllUsers}>
