@@ -1,6 +1,7 @@
 import React, { createContext, useMemo, useRef } from "react";
+import useAsyncReducer from "../hooks/useAsyncReducer";
 import { usersReducer } from "../reducers/allUsersReducer";
-import useAsyncReducer from "../hooks/useAsyncReducer"
+
 export const AllUsersStateContext = createContext();
 export const AllUsersDispatchContext = createContext();
 
@@ -8,7 +9,7 @@ export default function AllUsersProvider({ childern }){
    
     const initialUserState = {
         allUsers: [],
-        usersAreLoading: true
+        usersAreLoading: true,
     };
 
     const [state, dispatchAllUsers] = useAsyncReducer(
@@ -26,9 +27,9 @@ export default function AllUsersProvider({ childern }){
 
     return (
         <AllUsersStateContext.Provider value={state}>
-            <AllUsersDispatchContext value={dispatchAllUsers}>
+            <AllUsersDispatchContext.Provider value={dispatchAllUsers}>
                 { childern }
-            </AllUsersDispatchContext>
+            </AllUsersDispatchContext.Provider>
         </AllUsersStateContext.Provider>
     );
 }
