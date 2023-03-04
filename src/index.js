@@ -2,8 +2,8 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { Nest as ProvidersNest } from './components/Healpers/Nest';
 import { BrowserRouter as Router } from "react-router-dom";
+import { Nest as ProvidersNest } from './components/Healpers/Nest';
 import { appProviders } from "./utils/appProviders";
 import reportWebVitals from './reportWebVitals';
 
@@ -15,7 +15,7 @@ ReactDOM.render(
     </ProvidersNest>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
