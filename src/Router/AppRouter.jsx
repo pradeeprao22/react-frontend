@@ -27,7 +27,7 @@ export default function AppRouter() {
       <div>
         <ul>
           <li>
-            <Link to="/">Login</Link>
+            <Link to="/login">Login</Link>
           </li>
           <li>
             <Link to="/register">Register</Link>
@@ -49,7 +49,7 @@ export default function AppRouter() {
         */}
 
         <Routes>
-          <Route exact path="/" element={<Login/>} />          
+          <Route exact path="/login" element={<Login/>} />          
           <Route path="/register" element={<Register/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/post" element={<Post/>} />
