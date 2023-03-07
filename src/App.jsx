@@ -12,15 +12,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { useNavigate, useLocation } from "react-router-dom"
 
-// export interface IState {
-//   people: {
-//     name: string
-//     age: number
-//     url: string
-//     note?: string
-//   }[]
-// }
-
 function App() {
   const [, dispatch] = useStateValue();
   const navigate  = useNavigate();
@@ -58,7 +49,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
       <AppRouter />
+      </div>
       {/* <h1>People Invited</h1>
       <List people= {people} />
       <AddToList people= {people} setPeople= {setPeople}/> */}
