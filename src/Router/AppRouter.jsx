@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   Link
@@ -27,7 +26,7 @@ export default function AppRouter() {
       <div>
         <ul>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/">Login</Link>
           </li>
           <li>
             <Link to="/register">Register</Link>
