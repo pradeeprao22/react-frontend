@@ -2,15 +2,15 @@ import React, { useMemo, useState } from 'react';
 import './App.css';
 // import List from "./components/List"
 // import AddToList from "./components/AddToList"
-import AppRouter from "./Router/AppRouter"
+import AppRouter from "./Router/AppRouter";
 import { useStateValue } from './context/CurrentUserContext';
-import { verifyUser } from "./services/auth"
+import { verifyUser } from "./services/auth";
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom";
 
 function App() {
   const [, dispatch] = useStateValue();
