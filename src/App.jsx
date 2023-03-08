@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import './App.css';
 // import List from "./components/List"
 // import AddToList from "./components/AddToList"
@@ -14,7 +14,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 function App() {
   const [, dispatch] = useStateValue();
-  const navigate  = useNavigate();
+  const { navigate }  = useNavigate();
   const { pathname } = useLocation();
 
   useMemo( 
@@ -32,29 +32,11 @@ function App() {
     }
    , [ dispatch, navigate, pathname ]);
 
-  // const [people, setPeople] = useState<IState["people"]>([
-  //   {
-  //     name: "Pradeep Rao",
-  //     age: 30,
-  //     url: "https://example.com",
-  //     note: "some notes"
-  //   },
-  //   {
-  //     name: "Pradeep Rao",
-  //     age: 30,
-  //     url: "https://example.com",
-  //     note: "some notes"
-  //   }
-  // ])
-
   return (
     <div className="App">
       <div>
       <AppRouter />
       </div>
-      {/* <h1>People Invited</h1>
-      <List people= {people} />
-      <AddToList people= {people} setPeople= {setPeople}/> */}
     </div>
   );
 }
