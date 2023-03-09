@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Login() {
     const [{currentUser}, dispatch] = useStateValue;
     const history = useNavigate;
+    const token = localStorage.getItem("authToken");
 
     const handleLogin = async (loginData) => {
         loginData.email = loginData?.email?.toLowerCase()
@@ -69,7 +70,9 @@ export default function Login() {
             <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
             <label className="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+        
+        <button type="submit" className="btn btn-primary">Submit</button>
+        
         </form>
         </div>
     );
