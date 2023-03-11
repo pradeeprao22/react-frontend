@@ -1,7 +1,7 @@
 import { cloneElement } from "react";
 
-export const Nest = ({ element, children }) => 
-    element.reduceRight(
+export const Nest = ({ elements, children }) => 
+    elements.reduceRight(
         (out, element) => cloneElement(element, {}, out),
-        <>{ children }</>
+        <>{children}</>
     );
