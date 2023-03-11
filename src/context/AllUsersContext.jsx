@@ -6,15 +6,14 @@ export const AllUsersStateContext = createContext();
 export const AllUsersDispatchContext = createContext();
 
 export default function AllUsersProvider({ childern }){
-   
-    const initialUserState = {
+    const initialUsersState = {
         allUsers: [],
         usersAreLoading: true,
     };
 
     const [state, dispatchAllUsers] = useAsyncReducer(
         usersReducer,
-        initialUserState
+        initialUsersState
     );
 
     const dispatch = useRef(dispatchAllUsers);
@@ -28,7 +27,7 @@ export default function AllUsersProvider({ childern }){
     return (
         <AllUsersStateContext.Provider value={state}>
             <AllUsersDispatchContext.Provider value={dispatchAllUsers}>
-                { childern }
+                {childern}
             </AllUsersDispatchContext.Provider>
         </AllUsersStateContext.Provider>
     );
