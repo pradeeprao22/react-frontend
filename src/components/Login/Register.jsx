@@ -1,13 +1,15 @@
 import { useStateValue } from "../../context/CurrentUserContext";
 import { useState, useContext } from "react";
 import { registerUser } from "../../services/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { useHistory } from "react-router-dom";
 import { AllUsersDispatchContext, AllUsersStateContext } from "../../context/AllUsersContext"
 
 export default function Register() {
     const[{ currentUser }, dispatch] = useStateValue()
     const dispatchAllUsers =  useContext(AllUsersDispatchContext)
-    const history = useNavigate() 
+    const { allUsers } = useContext(AllUsersStateContext)
+    const history = useHistory();
 
 
     const handelRegister = async (registerData) => {
@@ -16,7 +18,7 @@ export default function Register() {
         dispatch({ type: "SET_USER", currentUser: userData })
         dispatchAllUsers({ type: "USER_CREATED", payload: userData })
 
-        history.push("/")
+        history.push("/dashboard")
     };
 
     const [formData, setFormData] = useState({
@@ -51,7 +53,7 @@ export default function Register() {
             <input 
              type="text" 
              className="form-control" 
-             id="exampleInputEmail1" 
+             id="email" 
              aria-describedby="emailHelp"
              name="email"
              onChange={handelChange}
@@ -62,7 +64,7 @@ export default function Register() {
             <input 
              type="text" 
              className="form-control" 
-             id="exampleInputPassword1"
+             id="password"
              name="password"
              onChange={handelChange}
              
@@ -72,7 +74,7 @@ export default function Register() {
             <input
              type="text" 
              className="form-control" 
-             id="exampleInputPassword1"
+             id="password"
              name="confirmpassword"
              onChange={handelChange}
              
