@@ -1,4 +1,4 @@
-export const initialState ={
+export const initialState = {
     currentUser: null,
 };
 function reducer(state, action) {
@@ -9,7 +9,7 @@ function reducer(state, action) {
           };
         case "EDIT_USER":
           return { 
-            currentUser: action.currentUser 
+            currentUser: action.currentUser,
           };
         case "REMOVE_USER":
           return { currentUser: null };
