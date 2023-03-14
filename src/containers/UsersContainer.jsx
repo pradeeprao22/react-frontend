@@ -8,5 +8,6 @@ import {
 
 export default function UserContainer() {
     const { allUsers, usersLoading } = useContext(AllUsersStateContext)
+    const dispatchAllUsers = useContext(AllUsersDispatchContext)
 
 }
