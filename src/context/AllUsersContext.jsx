@@ -5,7 +5,7 @@ import { usersReducer } from "../reducers/allUsersReducer";
 export const AllUsersStateContext = createContext();
 export const AllUsersDispatchContext = createContext();
 
-export default function AllUsersProvider({ childern }){
+export default function AllUsersProvider({ children }){
     const initialUsersState = {
         allUsers: [],
         usersAreLoading: true,
@@ -27,7 +27,7 @@ export default function AllUsersProvider({ childern }){
     return (
         <AllUsersStateContext.Provider value={state}>
             <AllUsersDispatchContext.Provider value={dispatchAllUsers}>
-                {childern}
+                {children}
             </AllUsersDispatchContext.Provider>
         </AllUsersStateContext.Provider>
     );
