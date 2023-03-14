@@ -1,8 +1,8 @@
-import react from "react";
+// import react from "react";
 import { useState, useContext } from "react";
 import { loginUser } from "../../services/auth"
 import { useStateValue } from "../../context/CurrentUserContext";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
