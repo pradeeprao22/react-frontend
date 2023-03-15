@@ -2,12 +2,12 @@
 import { useState, useContext } from "react";
 import { loginUser } from "../../services/auth"
 import { useStateValue } from "../../context/CurrentUserContext";
-// import { useNavigate } from "react-router";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router";
+// import { useHistory } from "react-router-dom";
 
 export default function Login() {
-    const [{currentUser}, dispatch] = useStateValue;
-    const history = useHistory();
+    const [{currentUser}, dispatch] = useStateValue();
+    const history = useNavigate();
     const token = localStorage.getItem("authToken");
 
     const handleLogin = async (loginData) => {
