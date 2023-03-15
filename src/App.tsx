@@ -1,4 +1,7 @@
 import { useMemo } from 'react';
+
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router";
 import './App.css';
 // import List from "./components/List"
 // import AddToList from "./components/AddToList"
@@ -9,12 +12,13 @@ import { verifyUser } from "./services/auth";
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import { useNavigate, useLocation } from "react-router-dom";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
+// import { useNavigate } from "react-router";
 
 function App() {
+  // const { push } = (location: History.LocationDescriptor<unknown>, state?: unknown) => void
   const [, dispatch] = useStateValue();
-  const { navigate }  = useNavigate();
+  const push = useNavigate();
   const { pathname } = useLocation();
 
   useMemo( 
@@ -27,10 +31,10 @@ function App() {
         !pathname.match(/^\/login$/i) &&
         !pathname.match(/^\/register$/i )
       ) {
-        navigate("/login");
+        push("/login");
       }
     }
-   , [ dispatch, navigate, pathname ]);
+   , [ dispatch, push, pathname ]);
 
   return (
     <div className="App">
