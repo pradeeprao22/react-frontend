@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -9,6 +9,7 @@ import Login from "../components/Login/Login"
 import Register from "../components/Login/Register"
 import Dashboard from "../pages/Dashboard"
 import Post from "../components/Posts/Post"
+import PrivateRoute from "../Router/PrivateRouter"
 
 // import { Switch } from "react-router";
 
@@ -26,7 +27,7 @@ export default function AppRouter() {
       <div>
         <ul>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/">Login</Link>
           </li>
           <li>
             <Link to="/register">Register</Link>
@@ -47,12 +48,13 @@ export default function AppRouter() {
           of them to render at a time
         */}
 
-        <Switch>
-          <Route path="/login" element={<Login/>} />          
-          <Route path="/register" element={<Register/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/post" element={<Post/>} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" component={<Login/>} />
+          {/* <PrivateRoute path="/" component={<Login/>} />          */}
+          <Route path="/register" component={<Register/>} />
+          <Route path="/dashboard" component={<Dashboard/>} />
+          <Route path="/post" component={<Post/>} />
+        </Routes>
       </div>
   );
 }
