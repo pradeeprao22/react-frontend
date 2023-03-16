@@ -19,7 +19,7 @@ export default function Login() {
             currentUser: userData,
         });
 
-        history.push("/");
+        history("/dashboard");
     }
 
     const [formData, setFormData] = useState({
