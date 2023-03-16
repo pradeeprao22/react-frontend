@@ -31,7 +31,7 @@ function App() {
         !pathname.match(/^\/login$/i) &&
         !pathname.match(/^\/register$/i )
       ) {
-        push("/login");
+        push("/");
       }
     }
    , [ dispatch, push, pathname ]);
