@@ -7,20 +7,20 @@ export const usersReducer = (state, action) => {
         switch (type) {
                 case "INIT":
                     try {
-                    const allUsers = await getAllUsers();
-                    resolve({ ...state, allUsers, usersAreLoading: false });
+                      const allUsers = await getAllUsers();
+                      resolve({ ...state, allUsers, usersAreLoading: false });
                     } catch (error) {
-                    return state;
+                      return state;
                     }
                     return state;
             
-                case "USER_CREATED":
-                    try {
-                        reslove({ ...state, allUsers: [...state.allUsers, payload] });
-                    } catch (error) {
-                        return state;
-                    }
-                    return state;
+                // case "USER_CREATED":
+                //     try {
+                //         reslove({ ...state, allUsers: [...state.allUsers, payload] });
+                //     } catch (error) {
+                //         return state;
+                //     }
+                //     return state;
             
                 case "USER_UPDATED":
                     try {
