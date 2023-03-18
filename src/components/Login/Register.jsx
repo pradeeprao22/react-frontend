@@ -2,15 +2,16 @@ import { useStateValue } from "../../context/CurrentUserContext";
 import { useState, useContext } from "react";
 import { registerUser } from "../../services/auth";
 import { useNavigate } from "react-router";
-import { useHistory } from "react-router-dom";
-import { AllUsersDispatchContext, AllUsersStateContext } from "../../context/AllUsersContext"
+// import { useHistory } from "react-router-dom";
+import { AllUsersDispatchContext, AllUsersStateContext } from "../../context/AllUsersContext";
 
 export default function Register() {
-    const[{ currentUser }, dispatch] = useStateValue()
-    const dispatchAllUsers =  useContext(AllUsersDispatchContext)
-    const { allUsers } = useContext(AllUsersStateContext)
-    const history = useHistory();
+    const[{ currentUser }, dispatch] = useStateValue();
+    const [passwordConfirm, setpasswordConfirm] = useState();
 
+    const dispatchAllUsers =  useContext(AllUsersDispatchContext);
+    const { allUsers } = useContext(AllUsersStateContext);
+    const history = useNavigate();
 
     const handelRegister = async (registerData) => {
         registerData.email = registerData?.email?.toLowerCase();
@@ -18,13 +19,12 @@ export default function Register() {
         dispatch({ type: "SET_USER", currentUser: userData })
         dispatchAllUsers({ type: "USER_CREATED", payload: userData })
 
-        history.push("/dashboard")
+        history("/dashboard")
     };
 
     const [formData, setFormData] = useState({
         email: "",
         password: "",
-        confirmPassword: "",
     });
 
     // const handelClickPassword = () => {
@@ -40,8 +40,8 @@ export default function Register() {
     };
 
     const handelSubmit = (e) => {
-        e.preventDefault()
-        handelRegister(formData)
+        e.preventDefault();
+        handelRegister(formData);
     };
 
 
@@ -66,6 +66,7 @@ export default function Register() {
              className="form-control" 
              id="password"
              name="password"
+            //  value="password"
              onChange={handelChange}
              
              />
@@ -74,13 +75,14 @@ export default function Register() {
             <input
              type="text" 
              className="form-control" 
-             id="password"
-             name="confirmpassword"
-             onChange={handelChange}
+             id="passwordConfirm"
+             name="passwordConfirm"
+            //  value="passwordConfirm"
+             onChange={(e) => setpasswordConfirm(e.target.value)}
              
             />
-
-            <button type="submit" className="btn btn-primary">Submit</button>
+<br></br>
+            <button type="submit" className="btn btn-primary">Register Now</button>
         </form>
         </div>
     );
