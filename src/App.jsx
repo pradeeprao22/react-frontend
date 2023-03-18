@@ -9,10 +9,7 @@ import AppRouter from "./Router/AppRouter";
 import { useStateValue } from './context/CurrentUserContext';
 import { verifyUser } from "./services/auth";
 
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
-// import "bootstrap/dist/js/bootstrap.bundle.min";
+
 // import { useNavigate } from "react-router";
 
 function App() {
@@ -38,8 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-      <AppRouter />
+      <div className="container">
+        <AppRouter />
       </div>
     </div>
   );
