@@ -9,6 +9,8 @@ import Login from "../components/Login/Login"
 import Register from "../components/Login/Register"
 import Dashboard from "../pages/Dashboard"
 import Post from "../components/Posts/Post"
+import { removeToken } from "../services/auth";
+// import { useNavigate } from "react-router";
 // import PrivateRoute from "../Router/PrivateRouter"
 
 // import { Switch } from "react-router";
@@ -23,6 +25,16 @@ import Post from "../components/Posts/Post"
 // export default AppRouter;
 
 export default function AppRouter() {
+
+  // const history = useNavigate();
+
+  // const handelLogout = () => {
+  //   dispatch({ type: "REMOVE_USER" });
+  //   localStorage.removeItem("authToken")
+  //   removeToken();
+  //   history("/login")
+  // }
+
   return (
       <div>
 
@@ -40,7 +52,7 @@ export default function AppRouter() {
         <a className="nav-link"><Link to="/">Login</Link></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link"><Link to="/">Register</Link></a>
+        <a className="nav-link"><Link to="/register">Register</Link></a>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
