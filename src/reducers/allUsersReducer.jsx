@@ -16,9 +16,9 @@ export const usersReducer = (state, action) => {
             
                 // case "USER_CREATED":
                 //     try {
-                //         reslove({ ...state, allUsers: [...state.allUsers, payload] });
+                //       reslove({ ...state, allUsers: [...state.allUsers, payload] });
                 //     } catch (error) {
-                //         return state;
+                //       return state;
                 //     }
                 //     return state;
             
