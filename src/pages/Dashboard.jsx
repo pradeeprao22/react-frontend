@@ -6,7 +6,22 @@ export default function Dashboard() {
     return(
         console.log(currentUser),
         <div className="container">
-            <h1>Dashboard</h1>
+            <h1>Account Details</h1>
+            {
+                (() => {
+                    if(currentUser) {
+                            return (
+                               <div>
+                                <p>ID: {currentUser?.id}</p>
+                                <p>Email: {currentUser?.email}</p>  
+                               </div>                          )
+                        } else {
+                            return (
+                            <p>Error</p>
+                            )
+                        }
+                })()  
+            }
         </div>
     );
 }
