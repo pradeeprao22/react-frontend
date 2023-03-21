@@ -27,7 +27,6 @@ export default function AppRouter() {
   }
 
   return (
-    console.log(currentUser),
       <div>
 
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -89,8 +88,8 @@ export default function AppRouter() {
         <Routes>
           <Route exact path="/" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
-          {/* <PrivateRoute path="/dashboard" element={<Dashboard/>} /> */}
-          {/* <PrivateRoute path="/post" element={<Post/>} /> */}
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/post" element={<Post/>} />
         </Routes>
       </div>
   );
