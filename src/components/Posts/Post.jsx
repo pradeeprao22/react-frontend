@@ -24,7 +24,6 @@ export default function Post() {
           const postData = await getAllPosts();
           setResponseData(postData);
           setLoaded(true);
-          console.log(postData)
         };
 
         fetchPosts();

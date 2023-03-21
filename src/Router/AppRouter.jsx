@@ -12,7 +12,7 @@ import Post from "../components/Posts/Post"
 import { removeToken } from "../services/auth";
 import { useStateValue } from "../context/CurrentUserContext"
 import { useNavigate } from "react-router";
-// import PrivateRoute from "../Router/PrivateRouter"
+import PrivateRoute from "./PrivateRoute";
 
 export default function AppRouter() {
   const [{currentUser}, dispatch] = useStateValue();
@@ -27,6 +27,7 @@ export default function AppRouter() {
   }
 
   return (
+    console.log(currentUser),
       <div>
 
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -88,8 +89,8 @@ export default function AppRouter() {
         <Routes>
           <Route exact path="/" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/post" element={<Post/>} />
+          {/* <PrivateRoute path="/dashboard" element={<Dashboard/>} /> */}
+          {/* <PrivateRoute path="/post" element={<Post/>} /> */}
         </Routes>
       </div>
   );
