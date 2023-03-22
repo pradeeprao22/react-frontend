@@ -1,7 +1,8 @@
+import React from "react";
 import { useStateValue } from "../context/CurrentUserContext";
 
 export default function Dashboard() {
-    const currentUser = useStateValue();
+    const [{currentUser}] = useStateValue();
 
     return(
         console.log(currentUser),
