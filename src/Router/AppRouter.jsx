@@ -37,7 +37,7 @@ export default function AppRouter() {
   <div className="collapse navbar-collapse" id="navbarNavDropdown">
     <ul className="navbar-nav">
       <li className="nav-item active">
-        <a className="nav-link"><Link to="/">Home</Link><span class="sr-only">(current)</span></a>
+        <a className="nav-link"><Link to="/">Home</Link><span class="sr-only"></span></a>
       </li>
       <li className="nav-item">
         <a className="nav-link"><Link to="/">Login</Link></a>
