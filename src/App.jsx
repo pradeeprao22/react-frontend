@@ -6,6 +6,7 @@ import './App.css';
 // import List from "./components/List"
 // import AddToList from "./components/AddToList"
 import AppRouter from "./Router/AppRouter";
+import Footer from "./layouts/Footer"
 import { useStateValue } from './context/CurrentUserContext';
 import { verifyUser } from "./services/auth";
 
@@ -37,6 +38,7 @@ function App() {
     <div className="App">
       <div className="container">
         <AppRouter />
+        <Footer />
       </div>
     </div>
   );
