@@ -5,7 +5,6 @@ export default function Dashboard() {
     const [{currentUser}] = useStateValue();
 
     return(
-        console.log(currentUser),
         <div className="container">
             <h1>Account Details</h1>
             {
@@ -15,7 +14,9 @@ export default function Dashboard() {
                                <div>
                                 <p>ID: {currentUser?.id}</p>
                                 <p>Email: {currentUser?.email}</p>  
-                               </div>                          )
+                                <p>Name: {currentUser?.name}</p>  
+                               </div>
+                               )
                         } else {
                             return (
                             <p>Error</p>
