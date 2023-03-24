@@ -5,8 +5,10 @@ export default function Footer() {
     // const [{currentUser}] = useStateValue();
 
     return(
+        <nav className="navbar bg-body-tertiary fixed-bottom">
         <div className="container">
-            <p>This is footer</p>
+           <p>Londevs</p>
         </div>
+        </nav>
     );
 }
