@@ -45,9 +45,16 @@ export default function AppRouter() {
       <li className="nav-item">
         <a className="nav-link"><Link to="/register">Register</Link></a>
       </li>
-      <li className="nav-item">
-        <a className="nav-link"><Link onClick={ handelLogout } >Logout</Link></a>
-      </li>
+
+      {
+        (() => {
+          if(currentUser) {
+          return (<li className="nav-item">
+        <a className="nav-link"><Link onClick={ handelLogout } >Logout</Link></a></li>)
+          }
+        })()  
+      }
+
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {
