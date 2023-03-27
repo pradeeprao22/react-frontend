@@ -15,6 +15,8 @@ export default function Dashboard() {
                                 <p>ID: {currentUser?.id}</p>
                                 <p>Email: {currentUser?.email}</p>  
                                 <p>Name: {currentUser?.name}</p>  
+                                <p>Bio: {currentUser?.bio}</p>  
+                                <p>Url: {currentUser?.url}</p>  
                                </div>
                                )
                         } else {
